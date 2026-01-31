@@ -5,12 +5,11 @@ import { Menu, X, Sparkles } from "lucide-react";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "/dashboard", label: "Dashboard" },
-  { href: "/scan", label: "AI Scan" },
-  { href: "/kids", label: "Kids Mode" },
-  { href: "/advisor", label: "Food Advisor" },
-  { href: "/chat", label: "AI Chat" },
+  { href: "/features", label: "Features" },
+  { href: "/solutions", label: "Solutions" },
+  { href: "/community", label: "Community" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/dashboard", label: "Dashboard" },
 ];
 
 export function Header() {
