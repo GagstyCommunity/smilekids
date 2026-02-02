@@ -31,6 +31,18 @@ import Partners from "./pages/Partners";
 import CommunityGuidelines from "./pages/CommunityGuidelines";
 import DoctorPolicy from "./pages/DoctorPolicy";
 import NotFound from "./pages/NotFound";
+// Core User Features
+import HabitsReminders from "./pages/HabitsReminders";
+import ProgressAchievements from "./pages/ProgressAchievements";
+import FamilyDashboard from "./pages/FamilyDashboard";
+import RiskForecast from "./pages/RiskForecast";
+// Trust/SaaS Pages
+import StatusPage from "./pages/StatusPage";
+import Changelog from "./pages/Changelog";
+import Roadmap from "./pages/Roadmap";
+import PressKit from "./pages/PressKit";
+import Careers from "./pages/Careers";
+import Accessibility from "./pages/Accessibility";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +74,12 @@ const App = () => (
           <Route path="/chat" element={<AIChat />} />
           <Route path="/settings" element={<Settings />} />
           
+          {/* New Core Features */}
+          <Route path="/habits" element={<HabitsReminders />} />
+          <Route path="/progress" element={<ProgressAchievements />} />
+          <Route path="/family" element={<FamilyDashboard />} />
+          <Route path="/forecast" element={<RiskForecast />} />
+          
           {/* Community & Doctors */}
           <Route path="/community" element={<Community />} />
           <Route path="/city/:city" element={<CityPage />} />
@@ -74,6 +92,14 @@ const App = () => (
           <Route path="/webinars" element={<WebinarLibrary />} />
           <Route path="/success-stories" element={<SuccessStories />} />
           <Route path="/partners" element={<Partners />} />
+          
+          {/* Trust/SaaS Pages */}
+          <Route path="/status" element={<StatusPage />} />
+          <Route path="/changelog" element={<Changelog />} />
+          <Route path="/roadmap" element={<Roadmap />} />
+          <Route path="/press" element={<PressKit />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/accessibility" element={<Accessibility />} />
           
           {/* Legal */}
           <Route path="/legal" element={<Legal />} />
