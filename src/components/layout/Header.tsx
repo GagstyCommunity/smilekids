@@ -52,20 +52,26 @@ export function Header() {
         </nav>
 
         {/* Auth Buttons */}
-        <div className="hidden lg:flex items-center gap-3">
-          {isLanding ? (
+        <div className="hidden lg:flex items-center gap-2">
+          <Button variant="ghost" asChild size="sm">
+            <Link to="/for-professionals">For Professionals</Link>
+          </Button>
+          {user ? (
             <>
-              <Button variant="ghost" asChild>
+              <Button variant="outline" asChild size="sm">
+                <Link to="/dashboard">Dashboard</Link>
+              </Button>
+              <Button variant="ghost" size="sm" onClick={signOut}>Sign out</Button>
+            </>
+          ) : (
+            <>
+              <Button variant="ghost" asChild size="sm">
                 <Link to="/login">Log in</Link>
               </Button>
-              <Button asChild className="bg-gradient-primary hover:opacity-90 shadow-glow">
+              <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90 shadow-glow">
                 <Link to="/signup">Get Started</Link>
               </Button>
             </>
-          ) : (
-            <Button variant="outline" asChild>
-              <Link to="/settings">Settings</Link>
-            </Button>
           )}
         </div>
 
