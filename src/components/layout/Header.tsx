@@ -9,13 +9,15 @@ const navLinks = [
   { href: "/features", label: "Features" },
   { href: "/learning", label: "Learning" },
   { href: "/community", label: "Community" },
+  { href: "/sessions", label: "Live" },
+  { href: "/blog", label: "Blog" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/dashboard", label: "Dashboard" },
 ];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { user, signOut } = useAuth();
   const isLanding = location.pathname === "/";
 
   return (
