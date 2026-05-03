@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
 
 const navLinks = [
   { href: "/features", label: "Features" },
-  { href: "/solutions", label: "Solutions" },
+  { href: "/learning", label: "Learning" },
   { href: "/community", label: "Community" },
   { href: "/pricing", label: "Pricing" },
   { href: "/dashboard", label: "Dashboard" },
