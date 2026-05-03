@@ -28,7 +28,14 @@ export default function BrandPartnership() {
     const parsed = schema.safeParse(form);
     if (!parsed.success) return toast.error(parsed.error.errors[0]?.message ?? "Invalid input");
     setLoading(true);
-    const { error } = await supabase.from("brand_inquiries").insert(parsed.data);
+    const { error } = await supabase.from("brand_inquiries").insert({
+      company: parsed.data.company,
+      contact_name: parsed.data.contact_name,
+      email: parsed.data.email,
+      phone: parsed.data.phone || null,
+      budget: parsed.data.budget || null,
+      message: parsed.data.message,
+    });
     setLoading(false);
     if (error) return toast.error(error.message);
     toast.success("Thanks! Our partnerships team will reach out soon.");
