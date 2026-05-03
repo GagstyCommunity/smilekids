@@ -3,18 +3,21 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
 
 const navLinks = [
   { href: "/features", label: "Features" },
-  { href: "/solutions", label: "Solutions" },
+  { href: "/learning", label: "Learning" },
   { href: "/community", label: "Community" },
+  { href: "/sessions", label: "Live" },
+  { href: "/blog", label: "Blog" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/dashboard", label: "Dashboard" },
 ];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { user, signOut } = useAuth();
   const isLanding = location.pathname === "/";
 
   return (
@@ -49,20 +52,26 @@ export function Header() {
         </nav>
 
         {/* Auth Buttons */}
-        <div className="hidden lg:flex items-center gap-3">
-          {isLanding ? (
+        <div className="hidden lg:flex items-center gap-2">
+          <Button variant="ghost" asChild size="sm">
+            <Link to="/for-professionals">For Professionals</Link>
+          </Button>
+          {user ? (
             <>
-              <Button variant="ghost" asChild>
+              <Button variant="outline" asChild size="sm">
+                <Link to="/dashboard">Dashboard</Link>
+              </Button>
+              <Button variant="ghost" size="sm" onClick={signOut}>Sign out</Button>
+            </>
+          ) : (
+            <>
+              <Button variant="ghost" asChild size="sm">
                 <Link to="/login">Log in</Link>
               </Button>
-              <Button asChild className="bg-gradient-primary hover:opacity-90 shadow-glow">
+              <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90 shadow-glow">
                 <Link to="/signup">Get Started</Link>
               </Button>
             </>
-          ) : (
-            <Button variant="outline" asChild>
-              <Link to="/settings">Settings</Link>
-            </Button>
           )}
         </div>
 

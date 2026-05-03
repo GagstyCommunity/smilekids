@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "@/hooks/useAuth";
 import Landing from "./pages/Landing";
 import Dashboard from "./pages/Dashboard";
 import AIScan from "./pages/AIScan";
@@ -31,18 +32,29 @@ import Partners from "./pages/Partners";
 import CommunityGuidelines from "./pages/CommunityGuidelines";
 import DoctorPolicy from "./pages/DoctorPolicy";
 import NotFound from "./pages/NotFound";
-// Core User Features
 import HabitsReminders from "./pages/HabitsReminders";
 import ProgressAchievements from "./pages/ProgressAchievements";
 import FamilyDashboard from "./pages/FamilyDashboard";
 import RiskForecast from "./pages/RiskForecast";
-// Trust/SaaS Pages
 import StatusPage from "./pages/StatusPage";
 import Changelog from "./pages/Changelog";
 import Roadmap from "./pages/Roadmap";
 import PressKit from "./pages/PressKit";
 import Careers from "./pages/Careers";
 import Accessibility from "./pages/Accessibility";
+// New pages
+import LearningCenter from "./pages/LearningCenter";
+import BlogPage from "./pages/BlogPage";
+import CommunityHub from "./pages/CommunityHub";
+import ForumPost from "./pages/ForumPost";
+import ForProfessionals from "./pages/ForProfessionals";
+import PublicDentistProfile from "./pages/PublicDentistProfile";
+import LiveSessions from "./pages/LiveSessions";
+import SessionDetail from "./pages/SessionDetail";
+import BrandPartnership from "./pages/BrandPartnership";
+import CookiesPolicy from "./pages/CookiesPolicy";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 const queryClient = new QueryClient();
 
@@ -52,63 +64,79 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          {/* Public Marketing */}
-          <Route path="/" element={<Landing />} />
-          <Route path="/features" element={<Features />} />
-          <Route path="/solutions" element={<Solutions />} />
-          <Route path="/how-it-works" element={<HowItWorks />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/pricing" element={<Pricing />} />
-          
-          {/* Auth */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          
-          {/* Core App */}
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/scan" element={<AIScan />} />
-          <Route path="/kids" element={<KidsMode />} />
-          <Route path="/advisor" element={<EatingAdvisor />} />
-          <Route path="/chat" element={<AIChat />} />
-          <Route path="/settings" element={<Settings />} />
-          
-          {/* New Core Features */}
-          <Route path="/habits" element={<HabitsReminders />} />
-          <Route path="/progress" element={<ProgressAchievements />} />
-          <Route path="/family" element={<FamilyDashboard />} />
-          <Route path="/forecast" element={<RiskForecast />} />
-          
-          {/* Community & Doctors */}
-          <Route path="/community" element={<Community />} />
-          <Route path="/city/:city" element={<CityPage />} />
-          <Route path="/doctors/profile" element={<DoctorProfile />} />
-          <Route path="/seminar/:id" element={<SeminarPage />} />
-          <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
-          
-          {/* Growth Pages */}
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/webinars" element={<WebinarLibrary />} />
-          <Route path="/success-stories" element={<SuccessStories />} />
-          <Route path="/partners" element={<Partners />} />
-          
-          {/* Trust/SaaS Pages */}
-          <Route path="/status" element={<StatusPage />} />
-          <Route path="/changelog" element={<Changelog />} />
-          <Route path="/roadmap" element={<Roadmap />} />
-          <Route path="/press" element={<PressKit />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/accessibility" element={<Accessibility />} />
-          
-          {/* Legal */}
-          <Route path="/legal" element={<Legal />} />
-          <Route path="/community-guidelines" element={<CommunityGuidelines />} />
-          <Route path="/doctor-policy" element={<DoctorPolicy />} />
-          
-          {/* Catch-all */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/features" element={<Features />} />
+            <Route path="/solutions" element={<Solutions />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/pricing" element={<Pricing />} />
+
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/scan" element={<AIScan />} />
+            <Route path="/kids" element={<KidsMode />} />
+            <Route path="/advisor" element={<EatingAdvisor />} />
+            <Route path="/chat" element={<AIChat />} />
+            <Route path="/settings" element={<Settings />} />
+
+            <Route path="/habits" element={<HabitsReminders />} />
+            <Route path="/progress" element={<ProgressAchievements />} />
+            <Route path="/family" element={<FamilyDashboard />} />
+            <Route path="/forecast" element={<RiskForecast />} />
+
+            {/* Learning + Blog */}
+            <Route path="/learning" element={<LearningCenter />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/news" element={<Blog />} />
+            <Route path="/webinars" element={<WebinarLibrary />} />
+            <Route path="/success-stories" element={<SuccessStories />} />
+
+            {/* Community */}
+            <Route path="/community" element={<CommunityHub />} />
+            <Route path="/community/post/:id" element={<ForumPost />} />
+            <Route path="/community/explore" element={<Community />} />
+            <Route path="/city/:city" element={<CityPage />} />
+
+            {/* Dentists / Professionals */}
+            <Route path="/for-professionals" element={<ForProfessionals />} />
+            <Route path="/dentists/:id" element={<PublicDentistProfile />} />
+            <Route path="/doctors/profile" element={<DoctorProfile />} />
+            <Route path="/dentist-dashboard" element={<DoctorDashboard />} />
+            <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
+
+            {/* Live sessions */}
+            <Route path="/sessions" element={<LiveSessions />} />
+            <Route path="/sessions/:id" element={<SessionDetail />} />
+            <Route path="/seminar/:id" element={<SeminarPage />} />
+
+            {/* Brand */}
+            <Route path="/brands" element={<BrandPartnership />} />
+            <Route path="/partners" element={<Partners />} />
+
+            {/* Trust pages */}
+            <Route path="/status" element={<StatusPage />} />
+            <Route path="/changelog" element={<Changelog />} />
+            <Route path="/roadmap" element={<Roadmap />} />
+            <Route path="/press" element={<PressKit />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/accessibility" element={<Accessibility />} />
+
+            {/* Legal */}
+            <Route path="/legal" element={<Legal />} />
+            <Route path="/terms" element={<TermsOfService />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/cookies" element={<CookiesPolicy />} />
+            <Route path="/community-guidelines" element={<CommunityGuidelines />} />
+            <Route path="/doctor-policy" element={<DoctorPolicy />} />
+
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
