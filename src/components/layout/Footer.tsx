@@ -31,13 +31,14 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Community</h4>
+            <h4 className="font-semibold mb-4">Explore</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/community" className="hover:text-foreground">Community Hub</Link></li>
+              <li><Link to="/in" className="hover:text-foreground">Cities</Link></li>
+              <li><Link to="/guides" className="hover:text-foreground">Guides</Link></li>
+              <li><Link to="/community" className="hover:text-foreground">Community</Link></li>
               <li><Link to="/sessions" className="hover:text-foreground">Live Sessions</Link></li>
               <li><Link to="/for-professionals" className="hover:text-foreground">For Professionals</Link></li>
               <li><Link to="/brands" className="hover:text-foreground">Brand Partnerships</Link></li>
-              <li><Link to="/contact" className="hover:text-foreground">Contact</Link></li>
             </ul>
           </div>
 
