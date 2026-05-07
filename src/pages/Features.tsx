@@ -95,7 +95,7 @@ export default function Features() {
               <span className="text-gradient">Better Oral Health</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              SmileOS combines AI technology with dental wellness best practices to help you 
+              Denta.Health combines AI technology with dental wellness best practices to help you 
               and your family maintain healthier smiles every day.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -163,7 +163,7 @@ export default function Features() {
                 Wellness-First Philosophy
               </h2>
               <p className="text-muted-foreground mb-6">
-                SmileOS is designed as a wellness guidance platform, not a medical diagnostic tool. 
+                Denta.Health is designed as a wellness guidance platform, not a medical diagnostic tool. 
                 Our AI provides educational insights and habit tracking to support your oral health journey, 
                 but always recommends consulting with dental professionals for any concerns.
               </p>
@@ -181,7 +181,7 @@ export default function Features() {
               Ready to Transform Your Oral Health?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Join thousands of families using SmileOS to build better dental habits.
+              Join thousands of families using Denta.Health to build better dental habits.
             </p>
             <Button asChild size="lg" className="bg-gradient-primary shadow-glow">
               <Link to="/signup">

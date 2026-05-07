@@ -23,7 +23,7 @@ const partnerTypes = [
   {
     icon: Stethoscope,
     title: "Dental Professionals",
-    description: "Grow your practice with SmileOS's city-wise visibility and webinar platform.",
+    description: "Grow your practice with Denta.Health's city-wise visibility and webinar platform.",
     benefits: [
       "Featured city listing",
       "Host paid webinars",
@@ -34,7 +34,7 @@ const partnerTypes = [
   {
     icon: Building,
     title: "Dental Clinics",
-    description: "Integrate SmileOS into your patient engagement strategy.",
+    description: "Integrate Denta.Health into your patient engagement strategy.",
     benefits: [
       "White-label options",
       "Patient engagement tools",
@@ -45,7 +45,7 @@ const partnerTypes = [
   {
     icon: ShoppingBag,
     title: "Oral Care Brands",
-    description: "Reach engaged, health-conscious families through SmileOS.",
+    description: "Reach engaged, health-conscious families through Denta.Health.",
     benefits: [
       "Product recommendations",
       "Sponsored content",
@@ -93,7 +93,7 @@ export default function Partners() {
               </div>
               <h1 className="text-3xl lg:text-5xl font-bold mb-6">
                 Grow with{" "}
-                <span className="text-gradient">SmileOS</span>
+                <span className="text-gradient">Denta.Health</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8">
                 Join our partner network and reach thousands of health-conscious 
@@ -204,7 +204,7 @@ export default function Partners() {
                     <Label htmlFor="message">Tell us about your goals</Label>
                     <Textarea 
                       id="message"
-                      placeholder="How would you like to partner with SmileOS?"
+                      placeholder="How would you like to partner with Denta.Health?"
                       rows={4}
                     />
                   </div>

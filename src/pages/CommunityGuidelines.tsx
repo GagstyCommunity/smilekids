@@ -29,7 +29,7 @@ export default function CommunityGuidelines() {
               <div>
                 <h2 className="font-bold text-warning mb-2">Important Reminder</h2>
                 <p className="text-sm text-foreground/80">
-                  SmileOS is a <strong>wellness guidance community</strong>. All discussions are for 
+                  Denta.Health is a <strong>wellness guidance community</strong>. All discussions are for 
                   educational and support purposes only. Never share or seek medical diagnoses, 
                   treatment plans, or professional dental advice in the community.
                 </p>
@@ -119,8 +119,8 @@ export default function CommunityGuidelines() {
 
                 <p>
                   For questions about these guidelines, contact us at{" "}
-                  <a href="mailto:community@smileos.com" className="text-primary">
-                    community@smileos.com
+                  <a href="mailto:community@denta.health" className="text-primary">
+                    community@denta.health
                   </a>
                 </p>
               </div>

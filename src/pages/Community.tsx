@@ -78,7 +78,7 @@ const expertTips = [
   {
     title: "Water After Snacks",
     content: "Teaching kids to drink water after eating sugary snacks can help neutralize acids and reduce cavity risk by up to 30%.",
-    author: "SmileOS AI Insights"
+    author: "Denta.Health AI Insights"
   },
   {
     title: "Cheese is a Friend",

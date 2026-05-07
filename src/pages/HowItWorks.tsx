@@ -26,7 +26,7 @@ const steps = [
     icon: Brain,
     title: "AI Analyzes Patterns",
     description: "Our AI processes your inputs to identify patterns, potential risk areas, and wellness opportunities.",
-    details: "Using advanced machine learning, SmileOS analyzes visual data and habit patterns to understand your oral health landscape."
+    details: "Using advanced machine learning, Denta.Health analyzes visual data and habit patterns to understand your oral health landscape."
   },
   {
     number: "03",
@@ -53,7 +53,7 @@ const steps = [
     number: "06",
     icon: Shield,
     title: "Wellness Disclaimer",
-    description: "Always remember: SmileOS provides wellness guidance, not medical diagnosis.",
+    description: "Always remember: Denta.Health provides wellness guidance, not medical diagnosis.",
     details: "We recommend regular visits to dental professionals for comprehensive care. Our AI supports your journey but doesn't replace expert care."
   }
 ];
@@ -69,7 +69,7 @@ export default function HowItWorks() {
           <div className="container text-center">
             <h1 className="text-3xl lg:text-5xl font-bold mb-6">
               How{" "}
-              <span className="text-gradient">SmileOS</span>{" "}
+              <span className="text-gradient">Denta.Health</span>{" "}
               Works
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
@@ -160,7 +160,7 @@ export default function HowItWorks() {
               Still Have Questions?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Our support team is here to help you get the most out of SmileOS.
+              Our support team is here to help you get the most out of Denta.Health.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="outline" size="lg" asChild>

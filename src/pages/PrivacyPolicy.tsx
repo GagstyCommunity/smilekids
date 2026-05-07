@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
       <main className="container py-12 max-w-3xl prose dark:prose-invert">
         <h1>Data Privacy Policy</h1>
         <p>Last updated: {new Date().toLocaleDateString()}</p>
-        <p>SmileOS is a wellness guidance platform. We collect only what is needed to deliver a useful, safe experience.</p>
+        <p>Denta.Health is a wellness guidance platform. We collect only what is needed to deliver a useful, safe experience.</p>
         <h2>What we collect</h2>
         <ul>
           <li>Account data — email, name, profile audience.</li>
@@ -24,7 +24,7 @@ export default function PrivacyPolicy() {
         <h2>Your rights</h2>
         <p>You can request export or deletion of your data at any time from Settings, or by contacting us.</p>
         <h2>Disclaimer</h2>
-        <p>SmileOS is not a medical service. Information shown is for wellness guidance only.</p>
+        <p>Denta.Health is not a medical service. Information shown is for wellness guidance only.</p>
       </main>
       <Footer />
     </div>

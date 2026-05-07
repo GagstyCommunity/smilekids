@@ -23,7 +23,7 @@ export default function Legal() {
               <div>
                 <h2 className="font-bold text-warning mb-2">Important Medical Disclaimer</h2>
                 <p className="text-sm text-foreground/80 leading-relaxed">
-                  SmileOS is a <strong>wellness guidance platform</strong> and does <strong>NOT</strong> provide 
+                  Denta.Health is a <strong>wellness guidance platform</strong> and does <strong>NOT</strong> provide 
                   medical diagnoses, treatment recommendations, or professional dental advice. All AI-generated 
                   insights are for informational and educational purposes only. Always consult with a qualified 
                   dental professional for any oral health concerns or before making any decisions related to 
@@ -50,7 +50,7 @@ export default function Legal() {
                 
                 <h3 className="text-foreground font-semibold mt-6">No Medical Advice</h3>
                 <p>
-                  The information provided by SmileOS ("we", "us", or "our") on our website and mobile 
+                  The information provided by Denta.Health ("we", "us", or "our") on our website and mobile 
                   application is for general informational and wellness guidance purposes only. All 
                   information on the Site and App is provided in good faith, however, we make no 
                   representation or warranty of any kind, express or implied, regarding the accuracy, 
@@ -59,7 +59,7 @@ export default function Legal() {
 
                 <h3 className="text-foreground font-semibold mt-6">Not a Substitute for Professional Care</h3>
                 <p>
-                  SmileOS is NOT a substitute for professional dental examination, diagnosis, or treatment. 
+                  Denta.Health is NOT a substitute for professional dental examination, diagnosis, or treatment. 
                   Never disregard professional dental advice or delay in seeking it because of something 
                   you have read or received through our Service.
                 </p>
@@ -74,7 +74,7 @@ export default function Legal() {
 
                 <h3 className="text-foreground font-semibold mt-6">Probability-Based Language</h3>
                 <p>
-                  All assessments provided by SmileOS use probability-based language (e.g., "may indicate", 
+                  All assessments provided by Denta.Health use probability-based language (e.g., "may indicate", 
                   "might suggest", "could be related to"). These statements reflect the uncertain nature 
                   of wellness indicators and should not be interpreted as definitive diagnoses.
                 </p>
@@ -97,14 +97,14 @@ export default function Legal() {
                 
                 <h3 className="text-foreground font-semibold mt-6">1. Acceptance of Terms</h3>
                 <p>
-                  By accessing and using SmileOS, you accept and agree to be bound by the terms and 
+                  By accessing and using Denta.Health, you accept and agree to be bound by the terms and 
                   provision of this agreement. If you do not agree to abide by the above, please do not 
                   use this service.
                 </p>
 
                 <h3 className="text-foreground font-semibold mt-6">2. Use License</h3>
                 <p>
-                  Permission is granted to temporarily use SmileOS for personal, non-commercial wellness 
+                  Permission is granted to temporarily use Denta.Health for personal, non-commercial wellness 
                   tracking purposes only. This is the grant of a license, not a transfer of title.
                 </p>
 
@@ -124,8 +124,8 @@ export default function Legal() {
 
                 <h3 className="text-foreground font-semibold mt-6">5. Limitation of Liability</h3>
                 <p>
-                  In no event shall SmileOS or its suppliers be liable for any damages arising out of 
-                  the use or inability to use the materials on SmileOS's website or application.
+                  In no event shall Denta.Health or its suppliers be liable for any damages arising out of 
+                  the use or inability to use the materials on Denta.Health's website or application.
                 </p>
               </div>
             </TabsContent>
@@ -168,7 +168,7 @@ export default function Legal() {
                 <h3 className="text-foreground font-semibold mt-6">Contact Us</h3>
                 <p>
                   If you have any questions about this Privacy Policy, please contact us at 
-                  privacy@smileos.com
+                  privacy@denta.health
                 </p>
               </div>
             </TabsContent>

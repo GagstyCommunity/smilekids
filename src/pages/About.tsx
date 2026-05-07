@@ -59,7 +59,7 @@ export default function About() {
                 for Everyone
               </h1>
               <p className="text-lg text-muted-foreground mb-8">
-                SmileOS was founded on a simple belief: everyone deserves access to 
+                Denta.Health was founded on a simple belief: everyone deserves access to 
                 oral health guidance, regardless of where they live or their access to 
                 dental care.
               </p>
@@ -83,7 +83,7 @@ export default function About() {
           </div>
         </section>
 
-        {/* Why SmileOS Exists */}
+        {/* Why Denta.Health Exists */}
         <section className="py-16 lg:py-24">
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -93,7 +93,7 @@ export default function About() {
                   Our Purpose
                 </div>
                 <h2 className="text-2xl lg:text-3xl font-bold mb-6">
-                  Why SmileOS Exists
+                  Why Denta.Health Exists
                 </h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
@@ -101,7 +101,7 @@ export default function About() {
                     visit a dentist when something goes wrong. We wanted to change that.
                   </p>
                   <p>
-                    SmileOS bridges the gap between daily habits and professional dental care. 
+                    Denta.Health bridges the gap between daily habits and professional dental care. 
                     We help you understand your oral health better, build preventive habits, 
                     and know when it's time to see a professional.
                   </p>
@@ -129,7 +129,7 @@ export default function About() {
                 Our Core Values
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                These principles guide everything we build at SmileOS.
+                These principles guide everything we build at Denta.Health.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -192,7 +192,7 @@ export default function About() {
             <div className="max-w-3xl mx-auto text-center">
               <Rocket className="w-12 h-12 text-primary mx-auto mb-4" />
               <h2 className="text-2xl lg:text-3xl font-bold mb-4">
-                What's Next for SmileOS
+                What's Next for Denta.Health
               </h2>
               <p className="text-muted-foreground mb-8">
                 We're constantly working on new features to make oral wellness more accessible:
@@ -229,7 +229,7 @@ export default function About() {
               Let's Connect
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Have questions about SmileOS? Want to partner with us? We'd love to hear from you.
+              Have questions about Denta.Health? Want to partner with us? We'd love to hear from you.
             </p>
             <Button asChild size="lg" className="bg-gradient-primary shadow-glow">
               <Link to="/contact">Contact Us</Link>

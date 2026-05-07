@@ -34,17 +34,17 @@ const brandAssets = [
 const pressReleases = [
   {
     date: "February 1, 2025",
-    title: "SmileOS Launches Family Dashboard Feature",
+    title: "Denta.Health Launches Family Dashboard Feature",
     excerpt: "New feature enables families to track and compare oral health habits across all members.",
   },
   {
     date: "January 15, 2025",
-    title: "SmileOS Partners with Dental Professionals for City-Based Community",
+    title: "Denta.Health Partners with Dental Professionals for City-Based Community",
     excerpt: "Platform expands to connect parents with local oral health experts through webinars.",
   },
   {
     date: "December 20, 2024",
-    title: "SmileOS 2.0: AI-Powered Oral Health Guidance Goes Live",
+    title: "Denta.Health 2.0: AI-Powered Oral Health Guidance Goes Live",
     excerpt: "Major platform update introduces AI scan technology and personalized wellness scoring.",
   },
 ];
@@ -65,18 +65,18 @@ export default function PressKit() {
         <div className="text-center mb-12">
           <h1 className="text-3xl lg:text-4xl font-bold mb-4">Press & Media Kit</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Resources for journalists, bloggers, and media professionals covering SmileOS
+            Resources for journalists, bloggers, and media professionals covering Denta.Health
           </p>
         </div>
 
         <div className="max-w-5xl mx-auto space-y-12">
           {/* About Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-6">About SmileOS</h2>
+            <h2 className="text-2xl font-bold mb-6">About Denta.Health</h2>
             <Card>
               <CardContent className="pt-6">
                 <p className="text-lg mb-6">
-                  SmileOS is an AI-powered oral health wellness platform that helps families
+                  Denta.Health is an AI-powered oral health wellness platform that helps families
                   build better dental care habits. Our mission is to make oral health guidance
                   accessible, engaging, and personalized for everyone.
                 </p>
@@ -158,7 +158,7 @@ export default function PressKit() {
                   variant="secondary"
                   className="bg-primary-foreground/20 hover:bg-primary-foreground/30 text-primary-foreground"
                 >
-                  press@smileos.com
+                  press@denta.health
                 </Button>
               </CardContent>
             </Card>

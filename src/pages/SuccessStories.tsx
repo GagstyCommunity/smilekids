@@ -17,7 +17,7 @@ const stories = [
     location: "Mumbai",
     avatar: "PM",
     title: "My son finally loves brushing his teeth!",
-    story: "Before SmileOS, getting my 6-year-old to brush was a daily battle. The Kids Mode gamification changed everything. Now he reminds ME when it's brushing time! His last dental checkup showed zero cavities.",
+    story: "Before Denta.Health, getting my 6-year-old to brush was a daily battle. The Kids Mode gamification changed everything. Now he reminds ME when it's brushing time! His last dental checkup showed zero cavities.",
     stats: { beforeScore: 45, afterScore: 92, timeframe: "3 months" },
     rating: 5
   },
@@ -37,7 +37,7 @@ const stories = [
     location: "Bangalore",
     avatar: "AK",
     title: "Managing three kids' dental health made easy",
-    story: "With three children under 10, keeping track of everyone's brushing habits was impossible. SmileOS's family dashboard gives me a complete picture. Sugar tracking has been a game-changer for preventing cavities.",
+    story: "With three children under 10, keeping track of everyone's brushing habits was impossible. Denta.Health's family dashboard gives me a complete picture. Sugar tracking has been a game-changer for preventing cavities.",
     stats: { beforeScore: 52, afterScore: 88, timeframe: "4 months" },
     rating: 5
   },
@@ -47,7 +47,7 @@ const stories = [
     location: "Pune",
     avatar: "VJ",
     title: "Finally understanding my coffee habit's impact",
-    story: "As a heavy coffee drinker, I never thought about staining until SmileOS showed me the data. The eating advisor helped me understand timing and rinsing. My teeth are noticeably less stained now.",
+    story: "As a heavy coffee drinker, I never thought about staining until Denta.Health showed me the data. The eating advisor helped me understand timing and rinsing. My teeth are noticeably less stained now.",
     stats: { beforeScore: 61, afterScore: 79, timeframe: "6 weeks" },
     rating: 4
   },
@@ -67,7 +67,7 @@ const stories = [
     location: "Ahmedabad",
     avatar: "AP",
     title: "Habit tracking kept me accountable",
-    story: "I knew I should floss daily but never stuck to it. SmileOS's streak tracking and reminders created accountability. 90 days strong now and my gum bleeding has completely stopped.",
+    story: "I knew I should floss daily but never stuck to it. Denta.Health's streak tracking and reminders created accountability. 90 days strong now and my gum bleeding has completely stopped.",
     stats: { beforeScore: 48, afterScore: 91, timeframe: "3 months" },
     rating: 5
   }
@@ -90,7 +90,7 @@ export default function SuccessStories() {
               Success Stories
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              See how families across India are building better oral health habits with SmileOS.
+              See how families across India are building better oral health habits with Denta.Health.
             </p>
           </div>
         </section>
@@ -206,7 +206,7 @@ export default function SuccessStories() {
               Ready to Write Your Own Success Story?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Join thousands of families who are building better oral health habits with SmileOS.
+              Join thousands of families who are building better oral health habits with Denta.Health.
             </p>
             <Button asChild size="lg" className="bg-gradient-primary shadow-glow">
               <Link to="/signup">

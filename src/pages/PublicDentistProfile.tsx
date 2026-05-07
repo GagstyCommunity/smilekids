@@ -51,7 +51,7 @@ export default function PublicDentistProfile() {
           </div>
           {profile.bio && <p className="mt-6 whitespace-pre-wrap text-sm">{profile.bio}</p>}
           <p className="mt-6 text-xs text-muted-foreground border-t pt-4">
-            Independent professional — not an employee or representative of SmileOS.
+            Independent professional — not an employee or representative of Denta.Health.
           </p>
         </div>
 

@@ -17,7 +17,7 @@ export default function DoctorPolicy() {
               </div>
               <div>
                 <h1 className="text-2xl lg:text-3xl font-bold">Doctor Advertising Policy</h1>
-                <p className="text-muted-foreground">Guidelines for dental professionals on SmileOS</p>
+                <p className="text-muted-foreground">Guidelines for dental professionals on Denta.Health</p>
               </div>
             </div>
             <p className="text-sm text-muted-foreground">Last Updated: January 2024</p>
@@ -29,7 +29,7 @@ export default function DoctorPolicy() {
               <div>
                 <h2 className="font-bold text-warning mb-2">Important Notice</h2>
                 <p className="text-sm text-foreground/80">
-                  SmileOS is a <strong>wellness education platform</strong>, not a medical service directory. 
+                  Denta.Health is a <strong>wellness education platform</strong>, not a medical service directory. 
                   All doctor profiles and content must focus on educational content and wellness guidance, 
                   not clinical services or medical treatment advertising.
                 </p>
@@ -118,7 +118,7 @@ export default function DoctorPolicy() {
               <h2 className="text-xl font-bold mb-4">Compliance & Enforcement</h2>
               <div className="prose prose-sm text-muted-foreground max-w-none space-y-4">
                 <p>
-                  SmileOS reviews all doctor profiles and content for compliance. Violations may result in:
+                  Denta.Health reviews all doctor profiles and content for compliance. Violations may result in:
                 </p>
                 <ul>
                   <li><strong>First violation:</strong> Warning and content modification request</li>
@@ -129,8 +129,8 @@ export default function DoctorPolicy() {
 
                 <p>
                   For questions about this policy, contact{" "}
-                  <a href="mailto:partners@smileos.com" className="text-primary">
-                    partners@smileos.com
+                  <a href="mailto:partners@denta.health" className="text-primary">
+                    partners@denta.health
                   </a>
                 </p>
               </div>

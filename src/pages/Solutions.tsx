@@ -115,7 +115,7 @@ export default function Solutions() {
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               Whether you're a parent managing your family's dental health or an individual 
-              looking to improve your habits, SmileOS has the right solution for you.
+              looking to improve your habits, Denta.Health has the right solution for you.
             </p>
           </div>
         </section>

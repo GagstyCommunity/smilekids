@@ -61,7 +61,7 @@ const releases = [
     version: "2.0.0",
     date: "December 20, 2024",
     type: "major",
-    title: "SmileOS 2.0 Launch",
+    title: "Denta.Health 2.0 Launch",
     changes: [
       { type: "feature", text: "Complete UI redesign" },
       { type: "feature", text: "AI Dentist Chat with safe mode" },
@@ -111,7 +111,7 @@ export default function Changelog() {
           </div>
           <h1 className="text-3xl lg:text-4xl font-bold mb-4">Changelog</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Stay up to date with the latest features, improvements, and fixes in SmileOS
+            Stay up to date with the latest features, improvements, and fixes in Denta.Health
           </p>
         </div>
 

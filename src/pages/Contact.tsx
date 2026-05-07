@@ -117,8 +117,8 @@ export default function Contact() {
                       <p className="text-sm text-muted-foreground mb-2">
                         For general inquiries and support requests
                       </p>
-                      <a href="mailto:support@smileos.com" className="text-primary hover:underline">
-                        support@smileos.com
+                      <a href="mailto:support@denta.health" className="text-primary hover:underline">
+                        support@denta.health
                       </a>
                     </div>
                   </div>
