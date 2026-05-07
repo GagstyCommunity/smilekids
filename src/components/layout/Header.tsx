@@ -29,7 +29,7 @@ export function Header() {
             <Sparkles className="w-5 h-5 text-primary-foreground" />
           </div>
           <span className="font-bold text-xl text-foreground">
-            Smile<span className="text-gradient">OS</span>
+            Denta<span className="text-gradient">.Health</span>
           </span>
         </Link>
 
