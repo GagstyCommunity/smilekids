@@ -55,6 +55,11 @@ import BrandPartnership from "./pages/BrandPartnership";
 import CookiesPolicy from "./pages/CookiesPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import ChildProfiles from "./pages/ChildProfiles";
+import AdminPanel from "./pages/AdminPanel";
+import CitySeoPage from "./pages/CitySeoPage";
+import TopicSeoPage from "./pages/TopicSeoPage";
+import SeoIndex from "./pages/SeoIndex";
 
 const queryClient = new QueryClient();
 
@@ -87,6 +92,12 @@ const App = () => (
             <Route path="/habits" element={<HabitsReminders />} />
             <Route path="/progress" element={<ProgressAchievements />} />
             <Route path="/family" element={<FamilyDashboard />} />
+            <Route path="/kids/profiles" element={<ChildProfiles />} />
+            <Route path="/admin" element={<AdminPanel />} />
+            <Route path="/in" element={<SeoIndex />} />
+            <Route path="/in/:city" element={<CitySeoPage />} />
+            <Route path="/guides" element={<SeoIndex />} />
+            <Route path="/guides/:topic" element={<TopicSeoPage />} />
             <Route path="/forecast" element={<RiskForecast />} />
 
             {/* Learning + Blog */}
