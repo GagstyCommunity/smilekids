@@ -71,7 +71,7 @@ function UsersTab() {
     if (error) toast.error(error.message); else { toast.success("Granted"); load(); }
   }
   async function revoke(uid: string, r: string) {
-    const { error } = await supabase.from("user_roles").delete().eq("user_id", uid).eq("role", r);
+    const { error } = await supabase.from("user_roles").delete().eq("user_id", uid).eq("role", r as any);
     if (error) toast.error(error.message); else { toast.success("Revoked"); load(); }
   }
   return (
