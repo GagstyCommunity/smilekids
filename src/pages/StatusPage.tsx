@@ -65,9 +65,9 @@ export default function StatusPage() {
             )}
             {allOperational ? "All Systems Operational" : "Some Systems Experiencing Issues"}
           </div>
-          <h1 className="text-3xl lg:text-4xl font-bold mb-2">SmileOS System Status</h1>
+          <h1 className="text-3xl lg:text-4xl font-bold mb-2">Denta.Health System Status</h1>
           <p className="text-muted-foreground">
-            Real-time status of all SmileOS services and infrastructure
+            Real-time status of all Denta.Health services and infrastructure
           </p>
         </div>
 

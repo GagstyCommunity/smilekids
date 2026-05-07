@@ -34,7 +34,7 @@ const webinars = [
   {
     id: 3,
     title: "Sugar, Acid, and Your Teeth",
-    doctor: "SmileOS Wellness Team",
+    doctor: "Denta.Health Wellness Team",
     duration: "32 mins",
     views: 756,
     rating: 4.7,
@@ -61,7 +61,7 @@ const webinars = [
   {
     id: 6,
     title: "Managing Coffee & Tea Stains Naturally",
-    doctor: "SmileOS Wellness Team",
+    doctor: "Denta.Health Wellness Team",
     duration: "25 mins",
     views: 432,
     rating: 4.6,

@@ -93,7 +93,7 @@ export default function Accessibility() {
         <div className="text-center mb-12">
           <h1 className="text-3xl lg:text-4xl font-bold mb-4">Accessibility Statement</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            SmileOS is committed to ensuring digital accessibility for people of all abilities.
+            Denta.Health is committed to ensuring digital accessibility for people of all abilities.
             We continually improve the user experience for everyone.
           </p>
         </div>
@@ -104,7 +104,7 @@ export default function Accessibility() {
             <CardContent className="pt-6">
               <h2 className="text-xl font-bold mb-4">Our Commitment</h2>
               <p className="text-muted-foreground mb-4">
-                We believe that everyone deserves access to oral health guidance. SmileOS is designed 
+                We believe that everyone deserves access to oral health guidance. Denta.Health is designed 
                 and developed with accessibility in mind from the ground up. We follow web accessibility 
                 guidelines and continually work to improve the experience for all users.
               </p>
@@ -194,7 +194,7 @@ export default function Accessibility() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button className="px-6 py-2 bg-primary-foreground/20 hover:bg-primary-foreground/30 rounded-lg transition-colors">
-                    accessibility@smileos.com
+                    accessibility@denta.health
                   </button>
                   <button className="px-6 py-2 bg-primary-foreground/20 hover:bg-primary-foreground/30 rounded-lg transition-colors flex items-center justify-center gap-2">
                     Report an Issue

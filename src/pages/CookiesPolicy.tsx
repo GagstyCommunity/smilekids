@@ -8,7 +8,7 @@ export default function CookiesPolicy() {
       <main className="container py-12 max-w-3xl prose dark:prose-invert">
         <h1>Cookies Policy</h1>
         <p>Last updated: {new Date().toLocaleDateString()}</p>
-        <p>SmileOS uses cookies and similar technologies to operate the service, remember your preferences, and improve our product.</p>
+        <p>Denta.Health uses cookies and similar technologies to operate the service, remember your preferences, and improve our product.</p>
         <h2>What we use cookies for</h2>
         <ul>
           <li><strong>Essential cookies</strong> — authentication, security, session continuity.</li>

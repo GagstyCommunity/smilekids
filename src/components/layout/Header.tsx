@@ -17,8 +17,7 @@ const navLinks = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const { user, signOut } = useAuth();
-  const isLanding = location.pathname === "/";
+  const { user, signOut, isAdmin } = useAuth();
 
   return (
     <header className="sticky top-0 z-50 w-full glass-strong">
@@ -29,7 +28,7 @@ export function Header() {
             <Sparkles className="w-5 h-5 text-primary-foreground" />
           </div>
           <span className="font-bold text-xl text-foreground">
-            Smile<span className="text-gradient">OS</span>
+            Denta<span className="text-gradient">.Health</span>
           </span>
         </Link>
 
@@ -58,9 +57,8 @@ export function Header() {
           </Button>
           {user ? (
             <>
-              <Button variant="outline" asChild size="sm">
-                <Link to="/dashboard">Dashboard</Link>
-              </Button>
+              {isAdmin && <Button variant="ghost" asChild size="sm"><Link to="/admin">Admin</Link></Button>}
+              <Button variant="outline" asChild size="sm"><Link to="/dashboard">Dashboard</Link></Button>
               <Button variant="ghost" size="sm" onClick={signOut}>Sign out</Button>
             </>
           ) : (

@@ -86,6 +86,39 @@ export type Database = {
         }
         Relationships: []
       }
+      child_profiles: {
+        Row: {
+          age: number | null
+          avatar_url: string | null
+          created_at: string
+          id: string
+          name: string
+          notes: string | null
+          parent_id: string
+          updated_at: string
+        }
+        Insert: {
+          age?: number | null
+          avatar_url?: string | null
+          created_at?: string
+          id?: string
+          name: string
+          notes?: string | null
+          parent_id: string
+          updated_at?: string
+        }
+        Update: {
+          age?: number | null
+          avatar_url?: string | null
+          created_at?: string
+          id?: string
+          name?: string
+          notes?: string | null
+          parent_id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       dentist_profiles: {
         Row: {
           avg_rating: number | null

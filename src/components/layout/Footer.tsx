@@ -11,12 +11,12 @@ export function Footer() {
               <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
                 <Sparkles className="w-4 h-4 text-primary-foreground" />
               </div>
-              <span className="font-bold text-lg">SmileOS</span>
+              <span className="font-bold text-lg">Denta.Health</span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-sm">
               Your AI Oral Health Coach. Wellness guidance, education, and a community for better daily habits.
             </p>
-            <a href="mailto:hello@smileos.app" className="text-sm text-primary inline-flex items-center gap-1 mt-3"><Mail className="w-3 h-3" /> hello@smileos.app</a>
+            <a href="mailto:smile@denta.health" className="text-sm text-primary inline-flex items-center gap-1 mt-3"><Mail className="w-3 h-3" /> smile@denta.health</a>
           </div>
 
           <div>
@@ -31,13 +31,14 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Community</h4>
+            <h4 className="font-semibold mb-4">Explore</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/community" className="hover:text-foreground">Community Hub</Link></li>
+              <li><Link to="/in" className="hover:text-foreground">Cities</Link></li>
+              <li><Link to="/guides" className="hover:text-foreground">Guides</Link></li>
+              <li><Link to="/community" className="hover:text-foreground">Community</Link></li>
               <li><Link to="/sessions" className="hover:text-foreground">Live Sessions</Link></li>
               <li><Link to="/for-professionals" className="hover:text-foreground">For Professionals</Link></li>
               <li><Link to="/brands" className="hover:text-foreground">Brand Partnerships</Link></li>
-              <li><Link to="/contact" className="hover:text-foreground">Contact</Link></li>
             </ul>
           </div>
 
@@ -54,7 +55,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} SmileOS. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Denta.Health. All rights reserved.</p>
           <p>Wellness guidance only. Not a substitute for professional dental care.</p>
         </div>
       </div>

@@ -59,9 +59,9 @@ const plans = [
 
 const faqs = [
   {
-    question: "Is SmileOS a replacement for dental visits?",
+    question: "Is Denta.Health a replacement for dental visits?",
     answer:
-      "No. SmileOS is a wellness guidance tool designed to help you build better dental habits. It does not provide medical diagnoses and should not replace regular dental checkups.",
+      "No. Denta.Health is a wellness guidance tool designed to help you build better dental habits. It does not provide medical diagnoses and should not replace regular dental checkups.",
   },
   {
     question: "How accurate is the AI scan?",
@@ -209,7 +209,7 @@ export default function Pricing() {
                 Start Your Wellness Journey Today
               </h2>
               <p className="text-primary-foreground/80 mb-8">
-                Join thousands of users building healthier dental habits with SmileOS.
+                Join thousands of users building healthier dental habits with Denta.Health.
                 No credit card required to start.
               </p>
               <Button

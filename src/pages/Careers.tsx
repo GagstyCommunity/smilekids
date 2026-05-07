@@ -39,7 +39,7 @@ const openPositions = [
     department: "Operations",
     location: "Remote (US)",
     type: "Full-time",
-    description: "Help our users get the most out of SmileOS.",
+    description: "Help our users get the most out of Denta.Health.",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function Careers() {
       <main className="container py-12">
         {/* Hero */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl lg:text-5xl font-bold mb-4">Join the SmileOS Team</h1>
+          <h1 className="text-3xl lg:text-5xl font-bold mb-4">Join the Denta.Health Team</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Help us revolutionize oral health wellness for families worldwide
           </p>

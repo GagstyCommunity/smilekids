@@ -24,7 +24,7 @@ export default function BlogPage() {
       <Header />
       <main className="container py-12">
         <header className="text-center mb-12">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4">SmileOS Blog</h1>
+          <h1 className="text-4xl lg:text-5xl font-bold mb-4">Denta.Health Blog</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Articles, news and research on modern oral wellness.
           </p>

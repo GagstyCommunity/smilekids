@@ -64,13 +64,13 @@ const testimonials = [
   {
     name: "Sarah M.",
     role: "Parent of 2",
-    content: "SmileOS has made dental care fun for my kids. The daily score gamification actually works!",
+    content: "Denta.Health has made dental care fun for my kids. The daily score gamification actually works!",
     avatar: "SM",
   },
   {
     name: "Dr. James K.",
     role: "Dental Professional",
-    content: "I recommend SmileOS to patients for habit tracking. It's responsible and wellness-focused.",
+    content: "I recommend Denta.Health to patients for habit tracking. It's responsible and wellness-focused.",
     avatar: "JK",
   },
   {
@@ -286,7 +286,7 @@ export default function Landing() {
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-display font-bold mb-4">Loved by Thousands</h2>
             <p className="text-lg text-muted-foreground">
-              See what our community says about SmileOS
+              See what our community says about Denta.Health
             </p>
           </div>
 
@@ -326,7 +326,7 @@ export default function Landing() {
               Ready to Transform Your Smile?
             </h2>
             <p className="text-xl text-primary-foreground/80 mb-8">
-              Join 50,000+ users building healthier dental habits with SmileOS.
+              Join 50,000+ users building healthier dental habits with Denta.Health.
               Start your free trial today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

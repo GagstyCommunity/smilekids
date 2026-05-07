@@ -17,7 +17,7 @@ const blogPosts = [
     title: "5 Daily Habits That Prevent 90% of Dental Problems",
     excerpt: "Simple changes in your daily routine can have a massive impact on your oral health. Learn the science-backed habits that dentists recommend.",
     category: "Prevention",
-    author: "SmileOS Team",
+    author: "Denta.Health Team",
     date: "Jan 28, 2024",
     readTime: "5 min read",
     featured: true
@@ -37,7 +37,7 @@ const blogPosts = [
     title: "The Hidden Connection Between Diet and Oral Health",
     excerpt: "It's not just sugar - discover the foods that protect your teeth and the ones that harm them.",
     category: "Nutrition",
-    author: "SmileOS AI Insights",
+    author: "Denta.Health AI Insights",
     date: "Jan 22, 2024",
     readTime: "6 min read",
     featured: false
@@ -47,7 +47,7 @@ const blogPosts = [
     title: "Electric vs Manual Toothbrush: The Science",
     excerpt: "We break down the research to help you make the right choice for your family.",
     category: "Products",
-    author: "SmileOS Team",
+    author: "Denta.Health Team",
     date: "Jan 18, 2024",
     readTime: "4 min read",
     featured: false
@@ -67,7 +67,7 @@ const blogPosts = [
     title: "Signs You Should See a Dentist (Not Just When It Hurts)",
     excerpt: "Early indicators that suggest it's time to book that dental appointment.",
     category: "Prevention",
-    author: "SmileOS Team",
+    author: "Denta.Health Team",
     date: "Jan 12, 2024",
     readTime: "3 min read",
     featured: false

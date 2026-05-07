@@ -45,7 +45,7 @@ export default function ForProfessionals() {
           <Stethoscope className="w-12 h-12 text-primary mx-auto mb-3" />
           <h1 className="text-4xl font-bold mb-3">Register as a Dentist</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Join SmileOS as a verified professional. Reach thousands of families, host live sessions, answer community questions, and grow your patient base.
+            Join Denta.Health as a verified professional. Reach thousands of families, host live sessions, answer community questions, and grow your patient base.
           </p>
         </header>
 
@@ -65,8 +65,8 @@ export default function ForProfessionals() {
 
         <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 mb-8 text-sm">
           <strong>Independence disclaimer:</strong> Registered dentists are independent professionals.
-          They are not employees, agents or official representatives of SmileOS. Their advice does not
-          constitute SmileOS medical guidance.
+          They are not employees, agents or official representatives of Denta.Health. Their advice does not
+          constitute Denta.Health medical guidance.
         </div>
 
         <div className="bg-primary/10 border border-primary/30 rounded-xl p-5 mb-8">
