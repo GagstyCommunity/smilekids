@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useMemo } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -6,38 +6,43 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Star, ShieldCheck } from "lucide-react";
 import { SEO_CITIES } from "@/data/seo";
+import SEOHead from "@/components/SEOHead";
 
 export default function CitySeoPage() {
   const { city } = useParams();
-  const found = SEO_CITIES.find(c => c.slug === city);
+  const found = useMemo(() => SEO_CITIES.find((c) => c.slug === city), [city]);
 
-  useEffect(() => {
-    if (!found) return;
-    document.title = `Top Dentists in ${found.name} | Denta.Health`;
-    const desc = `Find verified dentists in ${found.name}, ${found.country}. AI oral health coach, kids' habits, eating advisor — all on Denta.Health.`;
-    let m = document.querySelector('meta[name="description"]');
-    if (!m) { m = document.createElement('meta'); m.setAttribute('name', 'description'); document.head.appendChild(m); }
-    m.setAttribute('content', desc);
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) { canonical = document.createElement('link'); canonical.setAttribute('rel', 'canonical'); document.head.appendChild(canonical); }
-    canonical.setAttribute('href', `https://denta.health/in/${found.slug}`);
+  if (!found) return <Navigate to="/in" replace />;
 
-    const ld = document.createElement('script');
-    ld.type = 'application/ld+json';
-    ld.text = JSON.stringify({
-      "@context": "https://schema.org", "@type": "LocalBusiness",
-      name: `Denta.Health — ${found.name}`,
-      areaServed: { "@type": "City", name: found.name, containedInPlace: found.country },
-      description: desc,
-    });
-    document.head.appendChild(ld);
-    return () => { document.head.removeChild(ld); };
-  }, [found]);
-
-  if (!found) return <Navigate to="/" replace />;
+  const desc = `Find verified dentists in ${found.name}, ${found.country}. AI oral wellness coach, kids' habit tracking, and eating advisor on Denta.Health.`;
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title={`Top Dentists in ${found.name} | Denta.Health`}
+        description={desc}
+        canonical={`https://denta.health/in/${found.slug}`}
+        geoPlacename={`${found.name}, ${found.country}`}
+        keywords={["dentists", found.name, found.country, "oral health", "AI teeth scan"]}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: `Denta.Health — ${found.name}`,
+            areaServed: { "@type": "City", name: found.name, containedInPlace: found.country },
+            description: desc,
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://denta.health/" },
+              { "@type": "ListItem", position: 2, name: "Cities", item: "https://denta.health/in" },
+              { "@type": "ListItem", position: 3, name: found.name, item: `https://denta.health/in/${found.slug}` },
+            ],
+          },
+        ]}
+      />
       <Header />
       <main className="container py-12 max-w-5xl">
         <nav className="text-sm text-muted-foreground mb-4"><Link to="/">Home</Link> / <Link to="/in">Cities</Link> / {found.name}</nav>
@@ -55,7 +60,7 @@ export default function CitySeoPage() {
 
         <section className="prose max-w-none mb-12">
           <h2 className="text-2xl font-bold mb-3">Why Denta.Health in {found.name}?</h2>
-          <p className="text-muted-foreground">Whether you're a parent in {found.name} looking for cavity prevention for your kids, or an adult tracking gum health, Denta.Health combines AI-powered scans, daily habit tracking, and a verified community of local dentists. Sign up free, add your family, and start your protection score today.</p>
+          <p className="text-muted-foreground">Whether you're a parent in {found.name} looking for cavity prevention, or an adult tracking gum health, Denta.Health combines AI-powered scans, daily habit tracking, and a verified community of local dentists. Sign up free, add your family, and start your protection score today.</p>
         </section>
 
         <div className="text-center bg-gradient-primary rounded-2xl p-12 text-primary-foreground">
@@ -67,7 +72,7 @@ export default function CitySeoPage() {
         <section className="mt-16">
           <h3 className="font-semibold mb-4">Other cities</h3>
           <div className="flex flex-wrap gap-2">
-            {SEO_CITIES.filter(c => c.slug !== found.slug).map(c => (
+            {SEO_CITIES.filter((c) => c.slug !== found.slug).slice(0, 24).map((c) => (
               <Link key={c.slug} to={`/in/${c.slug}`} className="text-sm px-3 py-1.5 rounded-full bg-muted hover:bg-muted/70">{c.name}</Link>
             ))}
           </div>

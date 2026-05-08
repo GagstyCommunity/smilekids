@@ -1,25 +1,62 @@
-export interface SeoCity { slug: string; name: string; country: string; }
+export interface SeoCity { slug: string; name: string; country: string; region: string; }
+
+// Curated cities: USA, UK, Canada, Germany, Italy, Australia, New Zealand + other European
 export const SEO_CITIES: SeoCity[] = [
-  { slug: "mumbai", name: "Mumbai", country: "India" },
-  { slug: "delhi", name: "Delhi", country: "India" },
-  { slug: "bangalore", name: "Bangalore", country: "India" },
-  { slug: "hyderabad", name: "Hyderabad", country: "India" },
-  { slug: "chennai", name: "Chennai", country: "India" },
-  { slug: "pune", name: "Pune", country: "India" },
-  { slug: "kolkata", name: "Kolkata", country: "India" },
-  { slug: "ahmedabad", name: "Ahmedabad", country: "India" },
-  { slug: "london", name: "London", country: "United Kingdom" },
-  { slug: "new-york", name: "New York", country: "United States" },
-  { slug: "los-angeles", name: "Los Angeles", country: "United States" },
-  { slug: "chicago", name: "Chicago", country: "United States" },
-  { slug: "toronto", name: "Toronto", country: "Canada" },
-  { slug: "dubai", name: "Dubai", country: "United Arab Emirates" },
-  { slug: "singapore", name: "Singapore", country: "Singapore" },
-  { slug: "sydney", name: "Sydney", country: "Australia" },
-  { slug: "berlin", name: "Berlin", country: "Germany" },
-  { slug: "paris", name: "Paris", country: "France" },
-  { slug: "madrid", name: "Madrid", country: "Spain" },
-  { slug: "tokyo", name: "Tokyo", country: "Japan" },
+  // USA
+  { slug: "new-york", name: "New York", country: "United States", region: "North America" },
+  { slug: "los-angeles", name: "Los Angeles", country: "United States", region: "North America" },
+  { slug: "chicago", name: "Chicago", country: "United States", region: "North America" },
+  { slug: "houston", name: "Houston", country: "United States", region: "North America" },
+  { slug: "miami", name: "Miami", country: "United States", region: "North America" },
+  { slug: "san-francisco", name: "San Francisco", country: "United States", region: "North America" },
+  // UK
+  { slug: "london", name: "London", country: "United Kingdom", region: "Europe" },
+  { slug: "manchester", name: "Manchester", country: "United Kingdom", region: "Europe" },
+  { slug: "edinburgh", name: "Edinburgh", country: "United Kingdom", region: "Europe" },
+  { slug: "birmingham", name: "Birmingham", country: "United Kingdom", region: "Europe" },
+  // Canada
+  { slug: "toronto", name: "Toronto", country: "Canada", region: "North America" },
+  { slug: "vancouver", name: "Vancouver", country: "Canada", region: "North America" },
+  { slug: "montreal", name: "Montreal", country: "Canada", region: "North America" },
+  // Germany
+  { slug: "berlin", name: "Berlin", country: "Germany", region: "Europe" },
+  { slug: "munich", name: "Munich", country: "Germany", region: "Europe" },
+  { slug: "hamburg", name: "Hamburg", country: "Germany", region: "Europe" },
+  { slug: "frankfurt", name: "Frankfurt", country: "Germany", region: "Europe" },
+  // Italy
+  { slug: "rome", name: "Rome", country: "Italy", region: "Europe" },
+  { slug: "milan", name: "Milan", country: "Italy", region: "Europe" },
+  { slug: "florence", name: "Florence", country: "Italy", region: "Europe" },
+  { slug: "naples", name: "Naples", country: "Italy", region: "Europe" },
+  // Australia
+  { slug: "sydney", name: "Sydney", country: "Australia", region: "Oceania" },
+  { slug: "melbourne", name: "Melbourne", country: "Australia", region: "Oceania" },
+  { slug: "brisbane", name: "Brisbane", country: "Australia", region: "Oceania" },
+  { slug: "perth", name: "Perth", country: "Australia", region: "Oceania" },
+  // New Zealand
+  { slug: "auckland", name: "Auckland", country: "New Zealand", region: "Oceania" },
+  { slug: "wellington", name: "Wellington", country: "New Zealand", region: "Oceania" },
+  { slug: "christchurch", name: "Christchurch", country: "New Zealand", region: "Oceania" },
+  // Other Europe
+  { slug: "paris", name: "Paris", country: "France", region: "Europe" },
+  { slug: "lyon", name: "Lyon", country: "France", region: "Europe" },
+  { slug: "madrid", name: "Madrid", country: "Spain", region: "Europe" },
+  { slug: "barcelona", name: "Barcelona", country: "Spain", region: "Europe" },
+  { slug: "amsterdam", name: "Amsterdam", country: "Netherlands", region: "Europe" },
+  { slug: "rotterdam", name: "Rotterdam", country: "Netherlands", region: "Europe" },
+  { slug: "brussels", name: "Brussels", country: "Belgium", region: "Europe" },
+  { slug: "vienna", name: "Vienna", country: "Austria", region: "Europe" },
+  { slug: "zurich", name: "Zurich", country: "Switzerland", region: "Europe" },
+  { slug: "geneva", name: "Geneva", country: "Switzerland", region: "Europe" },
+  { slug: "stockholm", name: "Stockholm", country: "Sweden", region: "Europe" },
+  { slug: "copenhagen", name: "Copenhagen", country: "Denmark", region: "Europe" },
+  { slug: "oslo", name: "Oslo", country: "Norway", region: "Europe" },
+  { slug: "helsinki", name: "Helsinki", country: "Finland", region: "Europe" },
+  { slug: "dublin", name: "Dublin", country: "Ireland", region: "Europe" },
+  { slug: "lisbon", name: "Lisbon", country: "Portugal", region: "Europe" },
+  { slug: "warsaw", name: "Warsaw", country: "Poland", region: "Europe" },
+  { slug: "prague", name: "Prague", country: "Czechia", region: "Europe" },
+  { slug: "athens", name: "Athens", country: "Greece", region: "Europe" },
 ];
 
 export interface SeoTopic { slug: string; title: string; description: string; intro: string; tips: string[]; }

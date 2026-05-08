@@ -60,6 +60,7 @@ import AdminPanel from "./pages/AdminPanel";
 import CitySeoPage from "./pages/CitySeoPage";
 import TopicSeoPage from "./pages/TopicSeoPage";
 import SeoIndex from "./pages/SeoIndex";
+import ProfessionalGuides from "./pages/ProfessionalGuides";
 
 const queryClient = new QueryClient();
 
@@ -115,6 +116,7 @@ const App = () => (
 
             {/* Dentists / Professionals */}
             <Route path="/for-professionals" element={<ForProfessionals />} />
+            <Route path="/professional-guides" element={<ProfessionalGuides />} />
             <Route path="/dentists/:id" element={<PublicDentistProfile />} />
             <Route path="/doctors/profile" element={<DoctorProfile />} />
             <Route path="/dentist-dashboard" element={<DoctorDashboard />} />
