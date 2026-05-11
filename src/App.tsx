@@ -61,6 +61,9 @@ import CitySeoPage from "./pages/CitySeoPage";
 import TopicSeoPage from "./pages/TopicSeoPage";
 import SeoIndex from "./pages/SeoIndex";
 import ProfessionalGuides from "./pages/ProfessionalGuides";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { InstallPrompt } from "@/components/InstallPrompt";
+import { UpdateToast } from "@/components/UpdateToast";
 
 const queryClient = new QueryClient();
 
@@ -149,6 +152,9 @@ const App = () => (
 
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <MobileBottomNav />
+          <InstallPrompt />
+          <UpdateToast />
         </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
