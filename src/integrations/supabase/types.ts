@@ -14,6 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
+      audit_logs: {
+        Row: {
+          action: string
+          actor_id: string | null
+          created_at: string
+          id: string
+          ip_address: string | null
+          metadata: Json | null
+          target_id: string | null
+          target_table: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          action: string
+          actor_id?: string | null
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          metadata?: Json | null
+          target_id?: string | null
+          target_table?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          action?: string
+          actor_id?: string | null
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          metadata?: Json | null
+          target_id?: string | null
+          target_table?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       blog_posts: {
         Row: {
           author_id: string | null
@@ -471,7 +507,7 @@ export type Database = {
       }
     }
     Enums: {
-      app_role: "user" | "dentist" | "admin"
+      app_role: "user" | "dentist" | "admin" | "moderator"
       audience_type: "kids" | "adults" | "pregnant" | "general"
     }
     CompositeTypes: {
@@ -600,7 +636,7 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      app_role: ["user", "dentist", "admin"],
+      app_role: ["user", "dentist", "admin", "moderator"],
       audience_type: ["kids", "adults", "pregnant", "general"],
     },
   },
