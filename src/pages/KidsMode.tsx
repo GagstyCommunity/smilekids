@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ScoreRing } from "@/components/ui/score-ring";
@@ -173,7 +174,7 @@ export default function KidsMode() {
             <p className="text-muted-foreground">Daily brushing, streaks, and reminders for every child.</p>
           </div>
           <Button asChild className="bg-gradient-primary shadow-glow">
-            <a href="/kids/profiles"><Plus className="mr-2 w-4 h-4" /> Add Child</a>
+            <Link to="/kids/profiles"><Plus className="mr-2 w-4 h-4" /> Add Child</Link>
           </Button>
         </div>
 
@@ -251,7 +252,7 @@ export default function KidsMode() {
             {children.length === 0 && (
               <div className="bg-card rounded-2xl p-12 text-center border border-dashed">
                 <p className="text-muted-foreground mb-4">No children yet. Add your first profile to start tracking.</p>
-                <Button asChild className="bg-gradient-primary"><a href="/kids/profiles">Add Child Profile</a></Button>
+                <Button asChild className="bg-gradient-primary"><Link to="/kids/profiles">Add Child Profile</Link></Button>
               </div>
             )}
 
