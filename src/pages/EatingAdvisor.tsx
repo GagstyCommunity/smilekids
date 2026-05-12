@@ -55,9 +55,10 @@ export default function EatingAdvisor() {
       <Header />
       <main className="container py-8">
         <div className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            <h1 className="text-2xl lg:text-3xl font-bold mb-2 flex items-center gap-3">
-              <Apple className="w-8 h-8 text-primary" /> Eating Advisor
+          <div className="mb-8 grid md:grid-cols-[1fr_220px] gap-6 items-center">
+            <div>
+              <h1 className="text-2xl lg:text-3xl font-bold mb-2 flex items-center gap-3">
+                <Apple className="w-8 h-8 text-primary" /> Eating Advisor
             </h1>
             <p className="text-muted-foreground">Search 40+ foods or let AI analyze anything you eat or drink.</p>
           </div>
