@@ -232,7 +232,34 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* Lifestyle showcase */}
+      <section className="py-16 lg:py-24 bg-card/30">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-3">Built for the whole family</h2>
+            <p className="text-muted-foreground">From morning routines to dentist visits — wellness guidance that fits real life.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { src: familyBrushing, title: "Family routines", desc: "Make brushing a shared moment kids look forward to." },
+              { src: eatingAdvisorImg, title: "Tooth-friendly eating", desc: "Understand which foods protect or weaken enamel." },
+              { src: dentistConsult, title: "Real dentist support", desc: "Connect with verified dentists in your city." },
+            ].map((c) => (
+              <div key={c.title} className="rounded-2xl overflow-hidden bg-card border border-border/50 shadow-card group">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src={c.src} alt={c.title} loading="lazy" width={1024} height={768}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-semibold mb-1">{c.title}</h3>
+                  <p className="text-sm text-muted-foreground">{c.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 lg:py-32 bg-muted/30">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
