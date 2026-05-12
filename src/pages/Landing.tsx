@@ -4,6 +4,10 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FeatureCard } from "@/components/ui/feature-card";
 import { ScoreRing } from "@/components/ui/score-ring";
+import heroScan from "@/assets/hero-scan.jpg";
+import familyBrushing from "@/assets/family-brushing.jpg";
+import eatingAdvisorImg from "@/assets/eating-advisor.jpg";
+import dentistConsult from "@/assets/dentist-consult.jpg";
 import {
   Scan,
   ShieldCheck,
@@ -147,45 +151,34 @@ export default function Landing() {
               </div>
             </div>
 
-            {/* Right: Score Preview */}
+            {/* Right: Hero photo + score overlay */}
             <div className="relative flex items-center justify-center">
-              <div className="relative">
-                {/* Main score card */}
-                <div className="glass-strong rounded-3xl p-8 shadow-elevated animate-float">
-                  <div className="text-center mb-6">
-                    <h3 className="text-lg font-semibold text-foreground">Your Protection Score</h3>
-                    <p className="text-sm text-muted-foreground">Daily oral health rating</p>
-                  </div>
-                  <ScoreRing score={85} size="xl" label="Great" />
-                  <div className="mt-6 space-y-3">
-                    {[
-                      { label: "Brushing", value: 95 },
-                      { label: "Diet Impact", value: 78 },
-                      { label: "Habits", value: 82 },
-                    ].map((item) => (
-                      <div key={item.label} className="flex items-center gap-3">
-                        <span className="text-sm text-muted-foreground w-24">{item.label}</span>
-                        <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-gradient-primary rounded-full transition-all duration-1000"
-                            style={{ width: `${item.value}%` }}
-                          />
-                        </div>
-                        <span className="text-sm font-medium w-8">{item.value}</span>
-                      </div>
-                    ))}
+              <div className="relative w-full max-w-md">
+                <div className="rounded-3xl overflow-hidden shadow-elevated ring-1 ring-border/50">
+                  <img
+                    src={heroScan}
+                    alt="Smiling user holding Denta.Health AI scan on phone"
+                    width={1024}
+                    height={1024}
+                    className="w-full h-auto object-cover aspect-square"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -left-6 glass-strong rounded-2xl p-4 shadow-lg w-56 animate-fade-in">
+                  <div className="flex items-center gap-3">
+                    <ScoreRing score={85} size="sm" label="Great" />
+                    <div>
+                      <div className="text-xs text-muted-foreground">Protection Score</div>
+                      <div className="text-sm font-semibold">Healthy zone</div>
+                    </div>
                   </div>
                 </div>
-
-                {/* Floating badges */}
                 <div className="absolute -top-4 -right-4 glass rounded-xl px-4 py-2 shadow-lg animate-fade-in">
                   <div className="flex items-center gap-2 text-success">
                     <CheckCircle2 className="w-5 h-5" />
                     <span className="text-sm font-medium">Low Risk</span>
                   </div>
                 </div>
-
-                <div className="absolute -bottom-4 -left-4 glass rounded-xl px-4 py-2 shadow-lg animate-fade-in">
+                <div className="absolute top-1/2 -right-6 glass rounded-xl px-4 py-2 shadow-lg animate-fade-in">
                   <div className="flex items-center gap-2 text-primary">
                     <Zap className="w-5 h-5" />
                     <span className="text-sm font-medium">7 Day Streak</span>
@@ -239,7 +232,34 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* Lifestyle showcase */}
+      <section className="py-16 lg:py-24 bg-card/30">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-3">Built for the whole family</h2>
+            <p className="text-muted-foreground">From morning routines to dentist visits — wellness guidance that fits real life.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { src: familyBrushing, title: "Family routines", desc: "Make brushing a shared moment kids look forward to." },
+              { src: eatingAdvisorImg, title: "Tooth-friendly eating", desc: "Understand which foods protect or weaken enamel." },
+              { src: dentistConsult, title: "Real dentist support", desc: "Connect with verified dentists in your city." },
+            ].map((c) => (
+              <div key={c.title} className="rounded-2xl overflow-hidden bg-card border border-border/50 shadow-card group">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src={c.src} alt={c.title} loading="lazy" width={1024} height={768}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-semibold mb-1">{c.title}</h3>
+                  <p className="text-sm text-muted-foreground">{c.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 lg:py-32 bg-muted/30">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">

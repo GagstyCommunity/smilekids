@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Navigate, Link } from "react-router-dom";
+import ReactQuill from "react-quill-new";
+import "react-quill-new/dist/quill.snow.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -13,7 +15,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { Shield, CheckCircle2, XCircle, Trash2, Plus } from "lucide-react";
+import { Shield, CheckCircle2, XCircle, Trash2, Plus, Upload, Image as ImageIcon } from "lucide-react";
 
 export default function AdminPanel() {
   const { user, isAdmin, loading } = useAuth();
@@ -144,8 +146,62 @@ function LearningTab() {
 function ContentEditor({ table, title, fields }: { table: "blog_posts" | "learning_modules"; title: string; fields: string[] }) {
   const [rows, setRows] = useState<any[]>([]);
   const [form, setForm] = useState<any>({});
+  const [uploading, setUploading] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
+
   async function load() { const { data } = await supabase.from(table).select("*").order("created_at", { ascending: false }); setRows(data ?? []); }
   useEffect(() => { load(); }, []);
+
+  async function uploadImage(file: File): Promise<string | null> {
+    const ext = file.name.split(".").pop() || "jpg";
+    const path = `${table}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
+    const { error } = await supabase.storage.from("content-images").upload(path, file, { cacheControl: "3600", upsert: false });
+    if (error) { toast.error(error.message); return null; }
+    const { data } = supabase.storage.from("content-images").getPublicUrl(path);
+    return data.publicUrl;
+  }
+
+  async function onCoverChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]; if (!file) return;
+    setUploading(true);
+    const url = await uploadImage(file);
+    setUploading(false);
+    if (url) { setForm((f: any) => ({ ...f, cover_image: url })); toast.success("Cover uploaded"); }
+  }
+
+  // Quill image handler — uploads to bucket then inserts <img>
+  const quillRef = useRef<any>(null);
+  function imageHandler() {
+    const input = document.createElement("input");
+    input.type = "file"; input.accept = "image/*";
+    input.onchange = async () => {
+      const file = input.files?.[0]; if (!file) return;
+      setUploading(true);
+      const url = await uploadImage(file);
+      setUploading(false);
+      if (!url) return;
+      const editor = quillRef.current?.getEditor?.();
+      const range = editor?.getSelection(true);
+      editor?.insertEmbed(range?.index ?? 0, "image", url);
+      editor?.setSelection((range?.index ?? 0) + 1, 0);
+    };
+    input.click();
+  }
+
+  const quillModules = {
+    toolbar: {
+      container: [
+        [{ header: [1, 2, 3, false] }],
+        ["bold", "italic", "underline", "strike", "blockquote"],
+        [{ list: "ordered" }, { list: "bullet" }],
+        ["link", "image"],
+        [{ align: [] }, { color: [] }],
+        ["clean"],
+      ],
+      handlers: { image: imageHandler },
+    },
+  };
+
   async function save() {
     if (!form.title || !form.slug) return toast.error("Title and slug required");
     const { error } = form.id
@@ -158,18 +214,55 @@ function ContentEditor({ table, title, fields }: { table: "blog_posts" | "learni
     const { error } = await supabase.from(table).delete().eq("id", id);
     if (error) toast.error(error.message); else load();
   }
+
+  const shortFields = fields.filter((f) => f !== "content" && f !== "cover_image");
+
   return (
     <div className="grid lg:grid-cols-2 gap-4 mt-4">
       <Card><CardHeader><CardTitle>{form.id ? "Edit" : "New"} {title}</CardTitle></CardHeader>
         <CardContent className="space-y-3">
-          {fields.map(f => (
+          {shortFields.map((f) => (
             <div key={f}>
               <Label className="capitalize">{f.replace("_", " ")}</Label>
-              {f === "content" || f === "summary" || f === "excerpt"
-                ? <Textarea value={form[f] ?? ""} onChange={e => setForm({ ...form, [f]: e.target.value })} rows={f === "content" ? 6 : 2} />
-                : <Input value={form[f] ?? ""} onChange={e => setForm({ ...form, [f]: e.target.value })} />}
+              {f === "summary" || f === "excerpt"
+                ? <Textarea value={form[f] ?? ""} onChange={(e) => setForm({ ...form, [f]: e.target.value })} rows={2} />
+                : <Input value={form[f] ?? ""} onChange={(e) => setForm({ ...form, [f]: e.target.value })} />}
             </div>
           ))}
+
+          {fields.includes("cover_image") && (
+            <div>
+              <Label>Cover image</Label>
+              <div className="flex gap-2 items-center">
+                <Input value={form.cover_image ?? ""} onChange={(e) => setForm({ ...form, cover_image: e.target.value })} placeholder="Paste URL or upload" />
+                <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={onCoverChange} />
+                <Button type="button" variant="outline" size="sm" onClick={() => fileRef.current?.click()} disabled={uploading}>
+                  <Upload className="w-4 h-4 mr-1" />{uploading ? "Uploading…" : "Upload"}
+                </Button>
+              </div>
+              {form.cover_image && (
+                <img src={form.cover_image} alt="cover preview" className="mt-2 rounded-lg max-h-40 object-cover border" />
+              )}
+            </div>
+          )}
+
+          {fields.includes("content") && (
+            <div>
+              <Label>Content</Label>
+              <div className="bg-background rounded-md border">
+                <ReactQuill
+                  ref={quillRef}
+                  theme="snow"
+                  value={form.content ?? ""}
+                  onChange={(html) => setForm({ ...form, content: html })}
+                  modules={quillModules}
+                  placeholder="Write the article. Use the image button to upload pictures inline."
+                />
+              </div>
+              <p className="text-xs text-muted-foreground mt-1 flex items-center gap-1"><ImageIcon className="w-3 h-3" /> Inline images upload to secure storage automatically.</p>
+            </div>
+          )}
+
           <div className="flex gap-2">
             <Button onClick={save} className="bg-gradient-primary">Save</Button>
             {form.id && <Button variant="outline" onClick={() => setForm({})}>Cancel</Button>}
@@ -177,11 +270,17 @@ function ContentEditor({ table, title, fields }: { table: "blog_posts" | "learni
         </CardContent>
       </Card>
       <Card><CardHeader><CardTitle>{title} ({rows.length})</CardTitle></CardHeader>
-        <CardContent className="space-y-2 max-h-[600px] overflow-y-auto">
-          {rows.map(r => (
+        <CardContent className="space-y-2 max-h-[700px] overflow-y-auto">
+          {rows.map((r) => (
             <div key={r.id} className="flex items-center justify-between p-2 rounded border">
-              <div><div className="font-medium">{r.title}</div><div className="text-xs text-muted-foreground">/{r.slug}</div></div>
-              <div className="flex gap-1">
+              <div className="flex items-center gap-3 min-w-0">
+                {r.cover_image && <img src={r.cover_image} alt="" className="w-12 h-12 rounded object-cover" />}
+                <div className="min-w-0">
+                  <div className="font-medium truncate">{r.title}</div>
+                  <div className="text-xs text-muted-foreground truncate">/{r.slug}</div>
+                </div>
+              </div>
+              <div className="flex gap-1 shrink-0">
                 <Button size="sm" variant="ghost" onClick={() => setForm(r)}>Edit</Button>
                 <Button size="sm" variant="ghost" onClick={() => del(r.id)}><Trash2 className="w-4 h-4 text-destructive" /></Button>
               </div>
