@@ -1,0 +1,124 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Denta.Health",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.ico",
+  "colors": {
+    "primary": "#22C55E",
+    "light": "#4ADE80",
+    "dark": "#15803D"
+  },
+  "theme": "mint",
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "index",
+        "quickstart",
+        "platform-overview"
+      ]
+    },
+    {
+      "group": "AI Features",
+      "pages": [
+        "features/ai-teeth-scan",
+        "features/kids-mode",
+        "features/eating-advisor",
+        "features/protection-score",
+        "features/ai-dentist-chat",
+        "features/whitening-simulator",
+        "features/grinding-detection"
+      ]
+    },
+    {
+      "group": "Developers",
+      "pages": [
+        "api/authentication",
+        "api/scan-api",
+        "api/food-analysis-api",
+        "api/risk-score-api",
+        "api/webhooks"
+      ]
+    },
+    {
+      "group": "Guides",
+      "pages": [
+        "guides/pwa-installation",
+        "guides/privacy-safety",
+        "guides/ai-models",
+        "guides/integration-guide"
+      ]
+    },
+    {
+      "group": "Business",
+      "pages": [
+        "business/clinic-partnerships",
+        "business/insurance",
+        "business/affiliate-program"
+      ]
+    }
+  ],
+  "tabs": [
+    {
+      "name": "Website",
+      "url": "https://denta.health"
+    },
+    {
+      "name": "Dashboard",
+      "url": "https://app.denta.health"
+    },
+    {
+      "name": "API",
+      "url": "https://api.denta.health"
+    }
+  ],
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@denta.health"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/denta-health"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Community",
+      "icon": "users",
+      "url": "https://discord.gg/dentahealth"
+    },
+    {
+      "name": "Status",
+      "icon": "pulse",
+      "url": "https://status.denta.health"
+    }
+  ],
+  "footer": {
+    "socials": {
+      "twitter": "https://x.com/dentahealth",
+      "linkedin": "https://linkedin.com/company/dentahealth",
+      "github": "https://github.com/denta-health"
+    }
+  },
+  "analytics": {
+    "ga4": {
+      "measurementId": "G-DENTAHEALTH"
+    }
+  },
+  "seo": {
+    "keywords": [
+      "AI dental app",
+      "oral health AI",
+      "kids cavity tracker",
+      "teeth scan AI",
+      "dental wellness",
+      "smile tracking",
+      "oral hygiene app",
+      "AI brushing coach"
+    ]
+  }
+}
