@@ -252,7 +252,7 @@ export default function KidsMode() {
             {children.length === 0 && (
               <div className="bg-card rounded-2xl p-12 text-center border border-dashed">
                 <p className="text-muted-foreground mb-4">No children yet. Add your first profile to start tracking.</p>
-                <Button asChild className="bg-gradient-primary"><a href="/kids/profiles">Add Child Profile</a></Button>
+                <Button asChild className="bg-gradient-primary"><Link to="/kids/profiles">Add Child Profile</Link></Button>
               </div>
             )}
 
