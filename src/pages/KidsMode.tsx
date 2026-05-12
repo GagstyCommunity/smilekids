@@ -174,7 +174,7 @@ export default function KidsMode() {
             <p className="text-muted-foreground">Daily brushing, streaks, and reminders for every child.</p>
           </div>
           <Button asChild className="bg-gradient-primary shadow-glow">
-            <a href="/kids/profiles"><Plus className="mr-2 w-4 h-4" /> Add Child</a>
+            <Link to="/kids/profiles"><Plus className="mr-2 w-4 h-4" /> Add Child</Link>
           </Button>
         </div>
 
