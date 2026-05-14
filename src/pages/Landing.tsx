@@ -205,6 +205,9 @@ export default function Landing() {
         </div>
       </section>
 
+      {/* Public Scan Demo */}
+      <ScanDemo />
+
       {/* Features Section */}
       <section className="py-20 lg:py-32">
         <div className="container">
