@@ -100,6 +100,13 @@ export default function AIScan() {
             ref={fileRef}
             type="file"
             accept="image/*"
+            className="hidden"
+            onChange={(e) => onFile(e.target.files?.[0])}
+          />
+          <input
+            ref={cameraRef}
+            type="file"
+            accept="image/*"
             capture="environment"
             className="hidden"
             onChange={(e) => onFile(e.target.files?.[0])}
