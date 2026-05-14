@@ -33,10 +33,12 @@ export default function AIScan() {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [result, setResult] = useState<ScanResult | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+  const cameraRef = useRef<HTMLInputElement>(null);
 
   const reset = () => { setState("idle"); setResult(null); setImageUrl(null); };
 
   const onPick = () => fileRef.current?.click();
+  const onCamera = () => cameraRef.current?.click();
 
   const onFile = async (file?: File) => {
     if (!file) return;
