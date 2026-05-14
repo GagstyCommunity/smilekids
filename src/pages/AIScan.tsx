@@ -130,8 +130,8 @@ export default function AIScan() {
                   <p className="text-xs text-muted-foreground mt-2">JPG, PNG, HEIC · Max 10MB</p>
                 </button>
 
-                <div className="flex gap-4 justify-center">
-                  <Button onClick={onPick} className="bg-gradient-primary shadow-glow">
+                <div className="flex gap-4 justify-center flex-wrap">
+                  <Button onClick={onCamera} className="bg-gradient-primary shadow-glow">
                     <Camera className="mr-2 w-4 h-4" /> Take Photo
                   </Button>
                   <Button variant="outline" onClick={onPick}>
