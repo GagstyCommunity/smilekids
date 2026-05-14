@@ -46,6 +46,8 @@ function readJSON<T>(key: string, fallback: T): T {
   }
 }
 
+type Mode = "kid" | "standard" | "senior";
+
 export default function Dashboard() {
   const { user, loading } = useAuth();
   const nav = useNavigate();
@@ -56,6 +58,9 @@ export default function Dashboard() {
   const [chatDone, setChatDone] = useState(readJSON("dh.chatDone", false));
   const [reminderDone, setReminderDone] = useState(readJSON("dh.reminderDone", false));
   const [streak, setStreak] = useState<number>(readJSON("dh.streak", 0));
+  const [mode, setMode] = useState<Mode>(readJSON<Mode>("dh.mode", "standard"));
+
+  useEffect(() => { localStorage.setItem("dh.mode", JSON.stringify(mode)); }, [mode]);
 
   useEffect(() => {
     if (!loading && !user) nav("/login");
