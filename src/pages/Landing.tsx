@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FeatureCard } from "@/components/ui/feature-card";
 import { ScoreRing } from "@/components/ui/score-ring";
+import ScanDemo from "@/components/ScanDemo";
 import heroScan from "@/assets/hero-scan.jpg";
 import familyBrushing from "@/assets/family-brushing.jpg";
 import eatingAdvisorImg from "@/assets/eating-advisor.jpg";
@@ -203,6 +204,9 @@ export default function Landing() {
           </div>
         </div>
       </section>
+
+      {/* Public Scan Demo */}
+      <ScanDemo />
 
       {/* Features Section */}
       <section className="py-20 lg:py-32">

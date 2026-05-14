@@ -46,6 +46,8 @@ function readJSON<T>(key: string, fallback: T): T {
   }
 }
 
+type Mode = "kid" | "standard" | "senior";
+
 export default function Dashboard() {
   const { user, loading } = useAuth();
   const nav = useNavigate();
@@ -56,6 +58,9 @@ export default function Dashboard() {
   const [chatDone, setChatDone] = useState(readJSON("dh.chatDone", false));
   const [reminderDone, setReminderDone] = useState(readJSON("dh.reminderDone", false));
   const [streak, setStreak] = useState<number>(readJSON("dh.streak", 0));
+  const [mode, setMode] = useState<Mode>(readJSON<Mode>("dh.mode", "standard"));
+
+  useEffect(() => { localStorage.setItem("dh.mode", JSON.stringify(mode)); }, [mode]);
 
   useEffect(() => {
     if (!loading && !user) nav("/login");
@@ -152,7 +157,72 @@ export default function Dashboard() {
       />
       <Header />
 
-      <main className="container py-6 lg:py-10 max-w-6xl">
+      <main className={`container py-6 lg:py-10 max-w-6xl ${mode === "senior" ? "text-lg [&_h1]:text-4xl [&_h2]:text-2xl [&_button]:text-base [&_a]:text-base" : ""} ${mode === "kid" ? "[&_h1]:font-extrabold" : ""}`}>
+        {/* Mode switcher */}
+        <div className="mb-5 flex items-center justify-between gap-3 flex-wrap">
+          <div className="inline-flex items-center gap-1 rounded-full border border-border/60 bg-card p-1 shadow-sm">
+            {([
+              { id: "kid" as const, label: "👶 Kids" },
+              { id: "standard" as const, label: "✨ Standard" },
+              { id: "senior" as const, label: "🔎 Easy (55+)" },
+            ]).map((m) => (
+              <button
+                key={m.id}
+                onClick={() => setMode(m.id)}
+                className={`px-3 py-1.5 text-sm rounded-full transition-all ${
+                  mode === m.id ? "bg-gradient-primary text-primary-foreground shadow-glow" : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {m.label}
+              </button>
+            ))}
+          </div>
+          <span className="text-xs text-muted-foreground">Switch view anytime</span>
+        </div>
+
+        {mode === "kid" && (
+          <div className="mb-6 rounded-3xl p-5 lg:p-6 bg-gradient-to-r from-accent/30 via-primary/20 to-accent/30 border-2 border-accent/40 relative overflow-hidden">
+            <div className="absolute -top-6 -right-6 text-7xl opacity-20 select-none">🦷</div>
+            <div className="flex items-center gap-4 flex-wrap">
+              <div className="text-5xl">🦸‍♂️</div>
+              <div className="flex-1 min-w-[200px]">
+                <h2 className="text-2xl font-extrabold text-foreground">Hey Tooth Hero!</h2>
+                <p className="text-foreground/80">Brush, sparkle, level up. Earn stars and unlock badges every day! ⭐</p>
+              </div>
+              <div className="flex gap-2">
+                {[Flame, Trophy, Sparkles].map((I, i) => (
+                  <div key={i} className="w-12 h-12 rounded-2xl bg-card shadow flex items-center justify-center">
+                    <I className="w-6 h-6 text-accent" />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="mt-4 grid grid-cols-3 gap-3">
+              {[
+                { label: "Stars", value: streak * 3 || 0, emoji: "⭐" },
+                { label: "Streak", value: streak || 0, emoji: "🔥" },
+                { label: "Badges", value: completed, emoji: "🏅" },
+              ].map((s) => (
+                <div key={s.label} className="rounded-2xl bg-card/80 p-3 text-center shadow-sm">
+                  <div className="text-2xl">{s.emoji}</div>
+                  <div className="text-xl font-extrabold">{s.value}</div>
+                  <div className="text-xs text-muted-foreground">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {mode === "senior" && (
+          <div className="mb-6 rounded-2xl p-5 bg-primary/5 border border-primary/20 flex items-start gap-3">
+            <ShieldCheck className="w-6 h-6 text-primary mt-0.5" />
+            <div>
+              <p className="font-semibold text-lg">Easy view is on</p>
+              <p className="text-muted-foreground">Bigger text and simpler buttons. Tap any large card below to begin.</p>
+            </div>
+          </div>
+        )}
+
         {/* Greeting */}
         <div className="mb-6 lg:mb-8 flex items-start justify-between gap-4 flex-wrap">
           <div>

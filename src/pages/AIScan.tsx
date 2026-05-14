@@ -33,10 +33,12 @@ export default function AIScan() {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [result, setResult] = useState<ScanResult | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+  const cameraRef = useRef<HTMLInputElement>(null);
 
   const reset = () => { setState("idle"); setResult(null); setImageUrl(null); };
 
   const onPick = () => fileRef.current?.click();
+  const onCamera = () => cameraRef.current?.click();
 
   const onFile = async (file?: File) => {
     if (!file) return;
@@ -98,6 +100,13 @@ export default function AIScan() {
             ref={fileRef}
             type="file"
             accept="image/*"
+            className="hidden"
+            onChange={(e) => onFile(e.target.files?.[0])}
+          />
+          <input
+            ref={cameraRef}
+            type="file"
+            accept="image/*"
             capture="environment"
             className="hidden"
             onChange={(e) => onFile(e.target.files?.[0])}
@@ -121,8 +130,8 @@ export default function AIScan() {
                   <p className="text-xs text-muted-foreground mt-2">JPG, PNG, HEIC · Max 10MB</p>
                 </button>
 
-                <div className="flex gap-4 justify-center">
-                  <Button onClick={onPick} className="bg-gradient-primary shadow-glow">
+                <div className="flex gap-4 justify-center flex-wrap">
+                  <Button onClick={onCamera} className="bg-gradient-primary shadow-glow">
                     <Camera className="mr-2 w-4 h-4" /> Take Photo
                   </Button>
                   <Button variant="outline" onClick={onPick}>
